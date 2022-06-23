@@ -13,7 +13,7 @@ export function getDayObject(year: number, month: number, day: number, currentMo
     }
 }
 
-function getPreviousMonth(year: number, month: number) {
+export function getPreviousMonth(year: number, month: number) {
     if (month - 1 < 0) {
         return {
             month: 11,
@@ -24,7 +24,7 @@ function getPreviousMonth(year: number, month: number) {
     return { month: month - 1, year: year, days: getDaysInMonth(year, month - 1) }
 }
 
-function getNextMonth(year: number, month: number) {
+export function getNextMonth(year: number, month: number) {
     if (month + 1 > 11) {
         return {
             month: 0,

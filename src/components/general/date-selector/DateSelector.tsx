@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as f from '../../helpers'
 import { Day } from './Day'
 
@@ -10,7 +10,21 @@ interface DateSelectorProps {
 export function DateSelector({ open, setOpen }: DateSelectorProps) {
 
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
+    const [months, setMonths] = useState<f.DayType[][][]>([])
+    const [currentMonth, setCurrentMonth] = useState<f.DayType[][]>(f.getSplittedMonthArray(f.getMonth(2022, new Date().getMonth())))
+
+    useEffect(() => {
+        const currentMonthNumber = currentMonth[2][3].date.getMonth()
+        const currentYearNumber = currentMonth[2][3].date.getFullYear()
+        const previousData = f.getPreviousMonth(currentYearNumber, currentMonthNumber)
+        const nextData = f.getNextMonth(currentYearNumber, currentMonthNumber)
+        let chunk1 =  f.getSplittedMonthArray(f.getMonth(previousData.year, previousData.month))
+        let chunk2 = currentMonth
+        let chunk3 = f.getSplittedMonthArray(f.getMonth(nextData.year, nextData.month))
+        setMonths([chunk1, chunk2, chunk3])
+    }, [currentMonth])
 
     const thisMonthData = f.getMonth(2022, 1)
     const thisMonthChunks: f.DayType[][] = f.getSplittedMonthArray(thisMonthData)
@@ -36,7 +50,9 @@ export function DateSelector({ open, setOpen }: DateSelectorProps) {
         >
             <div className="rdp date-picker-header">
                 <div className="rdp scroll-arrow left"></div>
-                <h3 className="rdp month-year"></h3>
+                <h3 className="rdp month-year">
+                    {monthNames[thisMonthData[15].date.getMonth()]} {thisMonthData[15].date.getFullYear()}
+                </h3>
                 <div className="rdp scroll-arrow right"></div>
             </div>
             <table className="rdp date-picker table">
