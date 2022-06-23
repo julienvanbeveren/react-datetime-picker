@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "module": "esnext",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "noImplicitAny": true,
+      "target": "es2018",                          
+      "moduleResolution": "node",                     
+      "noEmitOnError": true,
+      "outDir": "./out-tsc",
+      "rootDir": "./src"
+    },
+    "include": [
+      "./src"
+    ]
+  }
