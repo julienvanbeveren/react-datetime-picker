@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -15,6 +16,7 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-react": "^7.17.12",
     "@open-wc/building-rollup": "^2.0.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@storybook/addon-actions": "^6.5.9",

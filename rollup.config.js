@@ -1,10 +1,10 @@
 import babel from 'rollup-plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import external from 'rollup-plugin-peer-deps-external'
+import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
-import jsx from 'acorn-jsx'
 import svg from 'rollup-plugin-svg'
 
 export default [
@@ -21,19 +21,21 @@ export default [
                 exports: 'named'
             }
         ],
-        acornInjectPlugins: [jsx()],
         plugins: [
-            typescript(),
-            postcss({
-                plugins: [],
-                minimize: true
+            resolve(),
+            commonjs(),
+            typescript({
+                typescript: require('typescript')
             }),
             babel({
                 exclude: 'node_modules/**',
                 presets: ['@babel/preset-react']
             }),
+            postcss({
+                plugins: [],
+                minimize: true
+            }),
             external(),
-            resolve(),
             terser(),
             svg()
         ]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { DatePicker } from '../components/DatePicker'
+import { DatePicker } from '../components/date-picker'
 
 const stories = storiesOf('DatePicker Test', module)
 

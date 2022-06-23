@@ -2,7 +2,7 @@
     "compilerOptions": {
       "lib": [
         "dom",
-        "dom.iterable",
+        "es6",
         "esnext"
       ],
       "allowJs": true,
@@ -15,15 +15,20 @@
       "module": "esnext",
       "resolveJsonModule": true,
       "isolatedModules": true,
-      "jsx": "preserve",
+      "jsx": "react-jsx",
       "noImplicitAny": true,
       "target": "es2018",                          
       "moduleResolution": "node",                     
       "noEmitOnError": true,
-      "outDir": "./out-tsc",
+      "declaration": true,
+      "outDir": "./dist",
       "rootDir": "./src"
     },
     "include": [
-      "./src"
+      "./src/**/*.ts*"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist"
     ]
   }
