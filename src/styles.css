@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --bg-clr: white;
+    --text-clr: black;
+    --accent-clr: #1a1a1a;
+    --secondary-clr: #949394;
+    --soft-clr: #f2f2f2;
+}
+
+.rdp {
+    font-family: 'Lato', sans-serif;
+}
+
+.rdp * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.rdp.picker-trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--bg-clr);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1.5px solid var(--secondary-clr);
+    cursor: pointer;
+}
+
+.rdp.picker-trigger-icon {
+    width: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rdp.picker-trigger-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.rdp.picker-trigger-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rdp.picker-select-text {
+    color: var(--accent-clr);
+    font-size: 13px;
+}
+
+.rdp.picker-date {
+    color: var(--text-clr);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.rdp.picker-trigger-arrow {
+    width: 23px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.rdp.picker-trigger-arrow img {
+    width: 100%;
+    height: auto;
+}
