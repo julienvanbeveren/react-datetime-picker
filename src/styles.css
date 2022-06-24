@@ -91,6 +91,9 @@
 
 .rdp.date-picker-wrapper {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     top: 105%;
     left: 0;
     transform: translateY(-20px);
@@ -99,7 +102,7 @@
     opacity: 0;
     pointer-events: none;
     padding: 20px;
-    width: fit-content;
+    /* width: 100%; */
     height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.093);
@@ -183,4 +186,26 @@
     color: var(--accent-clr);
     font-weight: 600;
     border: 1.5px solid var(--soft-clr);
+}
+
+.rdp.date-picker.table {
+    width: fit-content;
+    table-layout: fixed; 
+}
+
+.rdp.date-picker-calendar-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 295p x;
+}
+
+.rdp.date-picker-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rdp.scroll-arrow {
+    cursor: pointer;
+    user-select: none;
 }
