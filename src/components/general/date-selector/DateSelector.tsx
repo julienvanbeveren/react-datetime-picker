@@ -1,18 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as f from '../../helpers'
 import { Day } from './Day'
 
 interface DateSelectorProps {
     open: boolean
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
+    onChange?: (date: Date | undefined) => any
 }
 
-export function DateSelector({ open, setOpen }: DateSelectorProps) {
+export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
+    const calendarRef = useRef<any>()
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
     const [currentMonth, setCurrentMonth] = useState<f.DayType[][]>(f.getSplittedMonthArray(f.getMonth(2022, new Date().getMonth())))
+
+    useEffect(() => {
+        const trigger = document.querySelector('div.rdp.picker-trigger')
+        document.addEventListener('click', (e: any) => {
+            if (e.composedPath().includes(trigger)) {
+                return
+            }
+            else if (!e.composedPath().includes(calendarRef.current)) {
+                setOpen(false)
+            }
+        })
+    }, [])
 
     function handleSelectDay(day: f.DayType) {
         if (!selected) {
@@ -48,11 +62,21 @@ export function DateSelector({ open, setOpen }: DateSelectorProps) {
         setCurrentMonth(newCurrentMonth)
     }
 
+    function handleApllyChange() {
+        onChange?.(selected?.date)
+        setOpen(false)
+    }
+
+    function handleCancel() {
+        setSelected(undefined)
+        setOpen(false)
+    }
 
     return (
         <div 
             className={`rdp date-picker-wrapper ${open ? 'open' : 'closed'}`}
             onClick={(e) => e.stopPropagation()}
+            ref={calendarRef}
         >
             <div className="rdp date-picker-header">
                 <div onClick={e => handleChangeMonth('prev', 1)} className="rdp scroll-arrow left">
@@ -86,8 +110,8 @@ export function DateSelector({ open, setOpen }: DateSelectorProps) {
                 </table>
             </div>
             <div className="rdp date-picker-buttons-wrapper">
-                <button className="rdp button secondary-button">Cancel</button>
-                <button onClick={e => setOpen(false)} className="rdp button primary-button">Apply</button>
+                <button onClick={handleCancel} className="rdp button secondary-button">Cancel</button>
+                <button onClick={handleApllyChange} className="rdp button primary-button">Apply</button>
             </div>
         </div>
     )
