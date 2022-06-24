@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as f from '../../helpers'
 import { Day } from './Day'
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
-import 'swiper/swiper.min.css'
-// import "swiper/css/pagination"
-// import "swiper/css/navigation"
-// import "swiper/css/zoom"
-// import "swiper/css/effect-cards"
 
 interface DateSelectorProps {
     open: boolean

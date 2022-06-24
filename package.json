@@ -2,8 +2,9 @@
   "name": "@julienvanbeveren/react-datetime-picker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -45,8 +46,5 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "swiper": "^8.2.4"
   }
 }
