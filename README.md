@@ -38,4 +38,4 @@ import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 
 ## License
 
-[MIT License](https://andreasonny.mit-license.org/2019) © Andrea SonnY
+[MIT License](https://andreasonny.mit-license.org/2019https://github.com/julienvanbeveren/react-datetime-picker/blob/master/LICENSE.md) © Julien Van Beveren
