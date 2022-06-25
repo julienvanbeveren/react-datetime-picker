@@ -71,3 +71,11 @@ export function getSplittedMonthArray(days: DayType[]) {
     }
     return newDaysArray
 }
+
+export function getFormattedNumber(number: number | undefined) {
+    if (!number) {
+        return
+    }
+    const stringNumber = number.toString()
+    return stringNumber.length > 1 ? stringNumber : '0' + stringNumber
+}

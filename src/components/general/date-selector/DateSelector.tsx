@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import * as f from '../../helpers'
 import { Day } from './Day'
+import { useDatePicker } from '../../date-picker'
 
 interface DateSelectorProps {
     open: boolean
@@ -10,10 +11,12 @@ interface DateSelectorProps {
 
 export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
+    const { selected, setSelected } = useDatePicker()
+
     const calendarRef = useRef<any>()
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
+    // const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
     const [currentMonth, setCurrentMonth] = useState<f.DayType[][]>(f.getSplittedMonthArray(f.getMonth(2022, new Date().getMonth())))
 
     useEffect(() => {
@@ -30,14 +33,14 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
     function handleSelectDay(day: f.DayType) {
         if (!selected) {
-            setSelected(day)
+            setSelected?.(day)
             return
         }
         else if (selected.date.getTime() == day.date.getTime()) {
-            setSelected(undefined)
+            setSelected?.(undefined)
         }
         else {
-            setSelected(day)
+            setSelected?.(day)
         }
     }
 
@@ -68,7 +71,7 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
     }
 
     function handleCancel() {
-        setSelected(undefined)
+        setSelected?.(undefined)
         setOpen(false)
     }
 
