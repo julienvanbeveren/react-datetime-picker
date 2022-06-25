@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    --bg-clr: white;
-    --text-clr: black;
-    --accent-clr: #1a1a1a;
-    --secondary-clr: #949394;
-    --soft-clr: #f2f2f2;
+    --rdp-bg-clr: white;
+    --rdp-text-clr: black;
+    --rdp-accent-clr: #1a1a1a;
+    --rdp-secondary-clr: #949394;
+    --rdp-soft-clr: #f2f2f2;
 }
 
 .rdp {
@@ -25,10 +25,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    background-color: var(--bg-clr);
+    background-color: var(--rdp-bg-clr);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1.5px solid var(--soft-clr);
+    border: 1.5px solid var(--rdp-soft-clr);
     cursor: pointer;
 }
 
@@ -52,13 +52,13 @@
 }
 
 .rdp.picker-select-text {
-    color: var(--accent-clr);
+    color: var(--rdp-accent-clr);
     font-size: 13px;
     user-select: none;
 }
 
 .rdp.picker-date {
-    color: var(--text-clr);
+    color: var(--rdp-text-clr);
     font-size: 17px;
     font-weight: 800;
     user-select: none;
@@ -97,8 +97,8 @@
     top: 105%;
     left: 0;
     transform: translateY(-20px);
-    background-color: var(--bg-clr);
-    /* border: 1.5px solid var(--secondary-clr); */
+    background-color: var(--rdp-bg-clr);
+    /* border: 1.5px solid var(--rdp-secondary-clr); */
     opacity: 0;
     pointer-events: none;
     padding: 20px;
@@ -123,8 +123,8 @@
     width: 40px;
     height: 36px;
     border-radius: 9px;
-    background-color: var(--bg-clr);
-    color: var(--secondary-clr);
+    background-color: var(--rdp-bg-clr);
+    color: var(--rdp-secondary-clr);
     text-align: center;
     font-weight: 500;
     user-select: none;
@@ -135,7 +135,7 @@
     width: 40px;
     height: 36px;
     border-radius: 9px;
-    background-color: var(--bg-clr);
+    background-color: var(--rdp-bg-clr);
     transition: all 50ms ease;
     text-align: center;
     font-weight: 600;
@@ -144,21 +144,21 @@
 }
 
 .rdp.calendar-day.different-month {
-    color: var(--secondary-clr);
+    color: var(--rdp-secondary-clr);
 }
 
 .rdp.calendar-day.selected {
-    background-color: var(--accent-clr);
-    color: var(--bg-clr);
+    background-color: var(--rdp-accent-clr);
+    color: var(--rdp-bg-clr);
 }
 
 .rdp.calendar-day.selected:hover {
-    background-color: var(--accent-clr);
-    color: var(--bg-clr);
+    background-color: var(--rdp-accent-clr);
+    color: var(--rdp-bg-clr);
 }
 
 .rdp.calendar-day:hover {
-    background-color: var(--soft-clr);
+    background-color: var(--rdp-soft-clr);
     transition: all 50ms ease;
 }
 
@@ -176,16 +176,16 @@
 }
 
 .rdp.primary-button {
-    background-color: var(--accent-clr);
-    color: var(--bg-clr);
+    background-color: var(--rdp-accent-clr);
+    color: var(--rdp-bg-clr);
     font-weight: 600;
 }
 
 .rdp.secondary-button {
-    background-color: var(--bg-clr);
-    color: var(--accent-clr);
+    background-color: var(--rdp-bg-clr);
+    color: var(--rdp-accent-clr);
     font-weight: 600;
-    border: 1.5px solid var(--soft-clr);
+    border: 1.5px solid var(--rdp-soft-clr);
 }
 
 .rdp.date-picker.table {
