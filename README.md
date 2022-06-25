@@ -1,6 +1,6 @@
 # React Datetime Picker
 
-> A fully customizable datetime picker compontent library for React.js
+> A fully customizable datetime picker component library for React.js
 
 
 ## Installation
@@ -38,4 +38,4 @@ import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 
 ## License
 
-[MIT License](https://github.com/julienvanbeveren/react-datetime-picker/blob/master/LICENSE.md) © Julien Van Beveren
+This repository's contents are subjected to be under the [MIT License](https://github.com/julienvanbeveren/react-datetime-picker/blob/master/LICENSE.md). © Julien Van Beveren
