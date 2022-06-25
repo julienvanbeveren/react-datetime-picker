@@ -1,6 +1,6 @@
 # React Datetime Picker
 
-> A fully customizable datetime picker component library for React.js
+> A fully customizable datetime picker component library made with and for React.ts
 
 
 ## Installation
