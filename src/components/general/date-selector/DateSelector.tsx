@@ -11,7 +11,7 @@ interface DateSelectorProps {
 
 export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
-    const { selected, setSelected } = useDatePicker()
+    const { selected, setSelected, submitOnChange } = useDatePicker()
 
     const calendarRef = useRef<any>()
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
@@ -31,9 +31,13 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
     }, [])
 
     function handleSelectDay(day: f.DayType) {
-        if (!selected) {
+        if (submitOnChange) {
             setSelected?.(day)
-            return
+            onChange?.(day.date)
+            setOpen(false)
+        }
+        else if (!selected) {
+            setSelected?.(day)
         }
         else if (selected.date.getTime() == day.date.getTime()) {
             setSelected?.(undefined)
@@ -111,10 +115,10 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
                         })}
                 </table>
             </div>
-            <div className="rdp date-picker-buttons-wrapper">
+            {!submitOnChange && <div className="rdp date-picker-buttons-wrapper">
                 <button onClick={handleCancel} className="rdp button secondary-button">Cancel</button>
                 <button onClick={handleApllyChange} className="rdp button primary-button">Apply</button>
-            </div>
+            </div>}
         </div>
     )
 }
