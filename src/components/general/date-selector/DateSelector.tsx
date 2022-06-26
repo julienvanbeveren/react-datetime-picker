@@ -14,20 +14,6 @@ interface DateSelectorProps {
 
 
 
-export function DateInput ({}: any) {
-
-    const { selected , setSelected } = useDatePicker();
-
-    useEffect(function () {
-        console.log(selected)
-    }, [])
-
-    return (
-        <div className='date-input'>
-            
-        </div>
-    )   
-}
 export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
     const { selected, setSelected, submitOnChange } = useDatePicker()
