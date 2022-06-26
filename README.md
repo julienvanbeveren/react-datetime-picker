@@ -9,19 +9,24 @@
 $ npm install @julienvanbeveren/react-datetime-picker
 ```
 
+
 ## Usage
 
-### Import the component
+### Quick start
 
 ```jsx
 import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 ```
 
-### Use the component
-
 ```jsx
 <DatePicker />
 ```
+
+### Documentation
+| prop | type | required | description |
+|--|--|--|--|
+| minDate | Date | false | min date disables all dates before the specified date |
+
 
 ## Contributing
 
@@ -32,9 +37,11 @@ import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 5.  Push to the branch: `git push origin my-new-feature`
 6.  Submit a pull request :sunglasses:
 
+
 ## Authors
 
 **Julien Van Beveren**
+
 
 ## License
 
