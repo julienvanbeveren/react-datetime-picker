@@ -1,5 +1,6 @@
 import React from 'react'
 import { DayType } from '../../helpers'
+import { useDatePicker } from '../../date-picker'
 
 interface DayProps {
     data: DayType
@@ -9,6 +10,16 @@ interface DayProps {
 
 export function Day({ data, selected, handleSelectDay }: DayProps) {
     
+    const { minDate } = useDatePicker()
+
+    if (minDate && data.date.getTime() < minDate?.getTime()) {
+        return (
+            <td 
+                className='rdp calendar-day disabled'>
+                {data.date.getDate()}
+            </td>
+        )
+    }
 
     return (
         <td 

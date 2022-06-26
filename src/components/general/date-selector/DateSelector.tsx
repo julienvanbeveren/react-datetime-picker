@@ -30,14 +30,13 @@ export function DateInput ({}: any) {
 }
 export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
 
-    const { selected, setSelected } = useDatePicker()
+    const { selected, setSelected, submitOnChange } = useDatePicker()
 
     const calendarRef = useRef<any>()
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
     const regex = /^[0-1][0-2]\/[0-3][0-9]\/[0-9][0-9][0-9][0-9]$/
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    // const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
     const [currentMonth, setCurrentMonth] = useState<f.DayType[][]>(f.getSplittedMonthArray(f.getMonth(2022, new Date().getMonth())))
     const [inputOpened, setInputOpened] = useState<boolean>(false);
 
@@ -54,9 +53,13 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
     }, [])
 
     function handleSelectDay(day: f.DayType) {
-        if (!selected) {
+        if (submitOnChange) {
             setSelected?.(day)
-            return
+            onChange?.(day.date)
+            setOpen(false)
+        }
+        else if (!selected) {
+            setSelected?.(day)
         }
         else if (selected.date.getTime() == day.date.getTime()) {
             setSelected?.(undefined)
@@ -172,10 +175,10 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
                         })}
                 </table>
             </div>
-            <div className="rdp date-picker-buttons-wrapper">
+            {!submitOnChange && <div className="rdp date-picker-buttons-wrapper">
                 <button onClick={handleCancel} className="rdp button secondary-button">Cancel</button>
                 <button onClick={handleApllyChange} className="rdp button primary-button">Apply</button>
-            </div>
+            </div>}
         </div>
     )
 }

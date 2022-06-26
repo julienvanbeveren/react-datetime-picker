@@ -6,6 +6,8 @@ import { DayType } from "../helpers"
 
 interface DatePickerProps {
     onChange?: (date: Date | undefined) => any
+    minDate?: Date,
+    submitOnChange?: boolean
 }
 
 const DatePickerContext = createContext<useDatePickerProps>({})
@@ -14,17 +16,14 @@ export function useDatePicker() {
     return useContext(DatePickerContext)
 }
 
-interface useDatePickerProps {
+interface useDatePickerProps extends DatePickerProps {
     pickerOpen?: boolean
     setPickerOpen?: React.Dispatch<React.SetStateAction<boolean>>
     selected?: DayType | undefined
     setSelected?: React.Dispatch<React.SetStateAction<DayType | undefined>>
 }
 
-
-
-
-export function DatePicker({ onChange }: DatePickerProps) {
+export function DatePicker({ onChange, minDate, submitOnChange }: DatePickerProps) {
     
     const [pickerOpen, setPickerOpen] = useState<boolean>(false)
     const [selected, setSelected] = useState<DayType | undefined>(undefined)
@@ -34,7 +33,9 @@ export function DatePicker({ onChange }: DatePickerProps) {
         pickerOpen,
         setPickerOpen,
         selected,
-        setSelected
+        setSelected,
+        minDate,
+        submitOnChange,
     }
 
     return (
