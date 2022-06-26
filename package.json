@@ -1,6 +1,6 @@
 {
   "name": "@julienvanbeveren/react-datetime-picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-lib": "rollup -c"
+    "build": "rollup -c"
   },
   "author": "Julien Van Beveren",
   "license": "MIT",
