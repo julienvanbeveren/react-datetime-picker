@@ -111,7 +111,7 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
                 {
                     !inputOpened ? <h3 className="rdp month-year" onClick={() => setInputOpened(true)}>
                         {monthNames[currentMonth[3][3].date.getMonth()]} {currentMonth[3][3].date.getFullYear()}
-                    </h3> : <NumberFormat   value={dateValue} className='date-input' format={"##/##/####"} 
+                    </h3> : <NumberFormat   value={dateValue} className='date-input' format={"##/##/####"} placeholder="MM/DD/YYYY" 
                     onChange={handleTypeInput} onKeyDown={
 
                         function (e: any) {

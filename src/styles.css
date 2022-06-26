@@ -216,8 +216,8 @@
 .date-input {
     height: 30px;
     border: none;
-    font-size: 20px;
-    box-sizing: border-box;
+    font-size: 18px;
     width: 120px;
     outline: none;
+    text-align: center;
 }
