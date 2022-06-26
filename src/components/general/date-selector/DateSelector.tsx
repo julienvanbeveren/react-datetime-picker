@@ -16,7 +16,6 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
     const calendarRef = useRef<any>()
     const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    // const [selected, setSelected] = useState<f.DayType | undefined>(undefined)
     const [currentMonth, setCurrentMonth] = useState<f.DayType[][]>(f.getSplittedMonthArray(f.getMonth(2022, new Date().getMonth())))
 
     useEffect(() => {

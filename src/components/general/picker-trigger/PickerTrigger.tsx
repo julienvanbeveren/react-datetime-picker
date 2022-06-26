@@ -26,8 +26,8 @@ export function PickerTrigger({ children, onClick, open }: PickerTriggerProps) {
                     {selected && 
                     getFormattedNumber(selected?.date.getDate()) + '.' +
                     getFormattedNumber(selected?.date.getMonth()) + '.' +
-                    selected?.date.getFullYear()
-                    }
+                    selected?.date.getFullYear()}
+                    &nbsp;
                 </h2>
             </div>
             <div className={`rdp picker-trigger-arrow ${open ? 'open' : 'closed'}`}>
