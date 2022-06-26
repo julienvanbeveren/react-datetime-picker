@@ -210,7 +210,9 @@
     cursor: pointer;
     user-select: none;
 }
-
+.rdp.scroll-arrow img {
+    width: 10px;
+}
 .date-input {
     height: 30px;
     border: none;

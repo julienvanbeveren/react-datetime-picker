@@ -3,6 +3,8 @@ import * as f from '../../helpers'
 import { Day } from './Day'
 import { useDatePicker } from '../../date-picker'
 import NumberFormat from 'react-number-format'
+import arrowLeftIcon from '../../../assets/arrow-left.svg';
+import arrowRightIcon from '../../../assets/arrow-right.svg';
 
 interface DateSelectorProps {
     open: boolean
@@ -104,7 +106,7 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
         >
             <div className="rdp date-picker-header">
                 <div onClick={e => handleChangeMonth('prev', 1)} className="rdp scroll-arrow left">
-                    prev
+                    <img src={arrowLeftIcon} alt="" />
                 </div>
                 {
                     !inputOpened ? <h3 className="rdp month-year" onClick={() => setInputOpened(true)}>
@@ -141,7 +143,8 @@ export function DateSelector({ open, setOpen, onChange }: DateSelectorProps) {
                     }/>
                 }
                 <div onClick={e => handleChangeMonth('next', 1)}className="rdp scroll-arrow right">
-                    next
+                        <img src={arrowRightIcon} alt="" />
+
                 </div>
             </div>
             <table className="rdp date-picker table">
