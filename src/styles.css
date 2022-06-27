@@ -211,3 +211,14 @@
     cursor: pointer;
     user-select: none;
 }
+.rdp.scroll-arrow img {
+    width: 10px;
+}
+.date-input {
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    width: 120px;
+    outline: none;
+    text-align: center;
+}
