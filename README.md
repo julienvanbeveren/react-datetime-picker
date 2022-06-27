@@ -25,8 +25,9 @@ import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 ### Documentation
 | prop | type | required | default | description |
 |--|--|--|--|--|
-| minDate | Date | false | - | min date disables all dates before the specified date |
-| maxDate | Date | false | - | max date disables all dates after the specified date |
+| minDate | Date | false | - | disables all dates before the specified date |
+| maxDate | Date | false | - | disables all dates after the specified date |
+| defaultValue | Date | false | - | sets selected date to the provided defaultDate |
 | submitOnChange | boolean | false | false | removes submit button and auto submits when date is clicked |
 
 

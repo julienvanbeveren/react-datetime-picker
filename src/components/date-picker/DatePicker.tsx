@@ -2,12 +2,13 @@ import { createContext, useContext, useRef, useState } from "react"
 import { PickerTrigger } from "../general/picker-trigger"
 import { DateSelector } from "../general/date-selector"
 import '../../styles.css'
-import { DayType } from "../helpers"
+import { DayType, getBaseDay } from "../helpers"
 
 interface DatePickerProps {
     onChange?: (date: Date | undefined) => any
-    minDate?: Date,
-    maxDate?: Date,
+    minDate?: Date
+    maxDate?: Date
+    defaultValue?: Date
     submitOnChange?: boolean
 }
 
@@ -24,10 +25,10 @@ interface useDatePickerProps extends DatePickerProps {
     setSelected?: React.Dispatch<React.SetStateAction<DayType | undefined>>
 }
 
-export function DatePicker({ onChange, minDate, submitOnChange, maxDate }: DatePickerProps) {
+export function DatePicker({ onChange, minDate, submitOnChange, maxDate, defaultValue }: DatePickerProps) {
     
     const [pickerOpen, setPickerOpen] = useState<boolean>(false)
-    const [selected, setSelected] = useState<DayType | undefined>(undefined)
+    const [selected, setSelected] = useState<DayType | undefined>( defaultValue && { date: getBaseDay(defaultValue) } || undefined)
 
 
     const value: useDatePickerProps = {
@@ -37,6 +38,7 @@ export function DatePicker({ onChange, minDate, submitOnChange, maxDate }: DateP
         setSelected,
         minDate,
         maxDate,
+        defaultValue,
         submitOnChange,
     }
 

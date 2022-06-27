@@ -37,7 +37,7 @@ export function getNextMonth(year: number, month: number) {
 
 export interface DayType {
     date: Date;
-    currentMonth: boolean;
+    currentMonth?: boolean;
 }
 
 export function getMonth(year: number, month: number) {
@@ -78,4 +78,9 @@ export function getFormattedNumber(number: number | undefined) {
     }
     const stringNumber = number.toString()
     return stringNumber.length > 1 ? stringNumber : '0' + stringNumber
+}
+
+// function that returns the day of the inputted day at 00:00:00
+export function getBaseDay(day: Date) {
+    return new Date(day.getFullYear(), day.getMonth(), day.getDate())
 }

@@ -16,7 +16,7 @@ stories.add('DatePicker', () => {
     <div style={{ 
         width: '100%', height: '100vh', backgroundColor: '#white', display: 'flex', justifyContent: 'center', alignItems: 'center'
     }}>
-        <DatePicker submitOnChange onChange={handleChange} maxDate={new Date()}/>
+        <DatePicker submitOnChange onChange={handleChange} defaultValue={new Date()}/>
     </div>
     )
 })
