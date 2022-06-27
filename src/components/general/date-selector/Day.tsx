@@ -10,9 +10,9 @@ interface DayProps {
 
 export function Day({ data, selected, handleSelectDay }: DayProps) {
     
-    const { minDate } = useDatePicker()
+    const { minDate, maxDate } = useDatePicker()
 
-    if (minDate && data.date.getTime() < minDate?.getTime()) {
+    if ((minDate && data.date.getTime() < minDate?.getTime()) || (maxDate && data.date.getTime() > maxDate?.getTime())) {
         return (
             <td 
                 className='rdp calendar-day disabled'>
