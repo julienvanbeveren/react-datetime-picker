@@ -16,6 +16,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color: var(--rdp-accent-clr);
 }
 
 .rdp.picker-trigger {
@@ -152,14 +153,15 @@
     color: var(--rdp-bg-clr);
 }
 
-.rdp.calendar-day.selected:hover {
-    background-color: var(--rdp-accent-clr);
-    color: var(--rdp-bg-clr);
-}
-
-.rdp.calendar-day:hover {
+.rdp.calendar-day:not(.disabled,.selected):hover {
     background-color: var(--rdp-soft-clr);
     transition: all 50ms ease;
+}
+
+.rdp.calendar-day.disabled {
+    color: var(--rdp-soft-clr);
+    text-decoration: line-through;
+    cursor: default;
 }
 
 .rdp.date-picker-buttons-wrapper {
