@@ -33,12 +33,7 @@ import { DatePicker } from '@julienvanbeveren/react-datetime-picker'
 
 ## Contributing
 
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Add your changes: `git add .`
-4.  Commit your changes: `git commit -am 'Add some feature'`
-5.  Push to the branch: `git push origin my-new-feature`
-6.  Submit a pull request :sunglasses:
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 ## Authors
